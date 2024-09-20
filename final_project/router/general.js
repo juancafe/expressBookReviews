@@ -26,7 +26,7 @@ public_users.post("/register", (req,res) => {
 
  const username = req.body.username;
  const password = req.body.password;
- 
+
  // Check if both username and password are provided
  if (username && password) {
      // Check if the user does not already exist
@@ -43,6 +43,7 @@ public_users.post("/register", (req,res) => {
 });
 
 // Get the book list available in the shop
+// Task 1 screenshot in 1-getallbooks.png
 public_users.get('/',function (req, res) {
   //Write your code here
  //return res.status(300).json({message: "Yet to be implemented public_users.get'/' in general.js"});
@@ -51,12 +52,14 @@ public_users.get('/',function (req, res) {
 });
 
 // Get book details based on ISBN
+// Task 2 screenshot in 2-gedetailsISBN.png
 public_users.get('/isbn/:isbn',function (req, res) {
   //Write your code here
   return res.status(300).json({message: "Yet to be implemented public_users.get'/isbn/:isbn' in general.js"});
  });
   
 // Get book details based on author
+// Task 3 screenshot in 3-getbooksbyauthor.png
 public_users.get('/author/:author',function (req, res) {
   //Write your code here
   //return res.status(300).json({message: "Yet to be implemented public_users.get'/author/:author' in general.js"});
@@ -66,17 +69,21 @@ public_users.get('/author/:author',function (req, res) {
 });
 
 // Get all books based on title
+// Task 4 Screenshot in 4-getbooksbytitle.png
 public_users.get('/title/:title',function (req, res) {
   //Write your code here
-//  return res.status(300).json({message: "Yet to be implemented public_users.get'/title/:title' in general.js"});
-const title = req.params.title; 
-res.send(books[title]);
+    //  return res.status(300).json({message: "Yet to be implemented public_users.get'/title/:title' in general.js"});
+    const title = req.params.title; 
+    res.send(books[title]);
 });
 
 //  Get book review
+// Task 5 Screenshot in getbookreview.png
 public_users.get('/review/:isbn',function (req, res) {
-  //Write your code here
-  return res.status(300).json({message: "Yet to be implemented public_users.get'/review/:isbn' in general.js"});
+    //Write your code here
+    // return res.status(300).json({message: "Yet to be implemented public_users.get'/review/:isbn' in general.js"});
+    const review = req.params.review; 
+    res.send(books[review]);
 });
 
 module.exports.general = public_users;

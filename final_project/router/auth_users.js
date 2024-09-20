@@ -25,6 +25,24 @@ regd_users.put("/auth/review/:isbn", (req, res) => {
   return res.status(300).json({message: "Yet to be implemented regd_users.put('/auth/review/:isbn'"});
 });
 
+
+// Delete a book Task 9
+// Screenshot 9-deletereview.png
+regd_users.delete("/auth/review/:isbn", (req, res) => {
+     // Update the code here
+//  res.send("Yet to be implemented")//This line is to be replaced with actual return value
+    // Extract email parameter from request URL
+    const isbnmail = req.params.isbn;
+    if (email) {
+        // Delete books from 'booksdb' object based on provided isbn
+        delete books[isbn];
+    }
+    
+    // Send response confirming deletion of friend
+    res.send(`Friend with the email ${email} deleted.`);
+
+});
+
 module.exports.authenticated = regd_users;
 module.exports.isValid = isValid;
 module.exports.users = users;
