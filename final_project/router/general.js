@@ -20,6 +20,7 @@ const doesExist = (username) => {
 
 
 // Register a New User ???
+// Task 6 screenshot in 6-register.png
 public_users.post("/register", (req,res) => {
   //Write your code here
  // return res.status(300).json({message: "Yet to be implemented public_users.post'/register' in general.js"});
